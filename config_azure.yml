@@ -11,8 +11,14 @@ pipeline:
 
 policies:
 - name: FlowPolicy
-# - name: rasa_plus.ml.EnterpriseSearchPolicy
-#   llm:
-#     type: openai
-#     model_name: gpt-4
+- name: rasa_plus.ml.EnterpriseSearchPolicy
+  llm:
+    # type: openai
+    # model_name: gpt-4
+    type: azure
+    engine: jpmc-hackathon
+    model_name: gpt-4
+  embeddings:
+    model: text-embedding-ada-002
+    deployment: embeddings
 assistant_id: 20231204-131800-feldspar-exec
